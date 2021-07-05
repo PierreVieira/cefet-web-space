@@ -1,8 +1,8 @@
-let constEl = document.querySelector('#constante')
-let mass1El = document.querySelector('#massa1')
-let mass2El = document.querySelector('#massa2')
-let distanceEl = document.querySelector('#distancia')
-let resultEl = document.querySelector('#resultado')
+const constEl = document.querySelector('#constante')
+const mass1El = document.querySelector('#massa1')
+const mass2El = document.querySelector('#massa2')
+const distanceEl = document.querySelector('#distancia')
+const resultEl = document.querySelector('#resultado')
 
 function _valid(value) {
     return value > 0;
@@ -27,15 +27,15 @@ function _showInvalidAttributes(m1, m2, d) {
 }
 
 function _setResult(g, m1, m2, d) {
-    let forceGravitation = (g * m1 * m2) / (d ** 2)
+    const forceGravitation = (g * m1 * m2) / (d ** 2)
     resultEl.value = forceGravitation.toFixed(2)
 }
 
 function forceGravitationResult() {
-    let g = Number(constEl.getAttribute('value'))
-    let m1 = Number(mass1El.value)
-    let m2 = Number(mass2El.value)
-    let d = Number(distanceEl.value)
+    const g = Number(constEl.getAttribute('value'))
+    const m1 = Number(mass1El.value)
+    const m2 = Number(mass2El.value)
+    const d = Number(distanceEl.value)
     if (!_validAttributes(m1, m2, d)) {
         _showInvalidAttributes(m1, m2, d)
     } else {

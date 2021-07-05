@@ -1,8 +1,7 @@
 // Faça o exercício da GALERIA DE IMAGENS aqui
 // Este arquivo AINDA NÃO ESTÁ INCLUÍDO no arquivo HTML
 
-const servidorDasImagens = 'https://fegemo.github.io/cefet-web/images/osiris';
-const imagens = [
+const images = [
     {
         arquivo: 'modelo-artistico-da-sonda.webp',
         descricao: 'Imagem em 3D mostrando a sonda tocando um asteróide. ' +
@@ -48,3 +47,29 @@ const imagens = [
     }
 ];
 
+let positionCurrentImage = 0
+const urlImagesPrefix = 'https://fegemo.github.io/cefet-web/images/osiris/'
+const imageEl = document.querySelector('#slide')
+
+function _setImage() {
+    imageEl.setAttribute('src', urlImagesPrefix + images[positionCurrentImage].arquivo)
+    imageEl.setAttribute('alt', images[positionCurrentImage].descricao)
+}
+
+function previousImage() {
+    if (positionCurrentImage === 0) {
+        positionCurrentImage = images.length - 1
+    } else {
+        --positionCurrentImage
+    }
+    _setImage()
+}
+
+function nextImage() {
+    if (positionCurrentImage === images.length - 1) {
+        positionCurrentImage = 0
+    } else {
+        ++positionCurrentImage
+    }
+    _setImage()
+}

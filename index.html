@@ -79,8 +79,8 @@
             </p>
             <div id="galeria">
                 <img src="https://fegemo.github.io/cefet-web/images/osiris/modelo-artistico-da-sonda.webp" id="slide" alt="modelo artístico de uma sonda">
-                <button id="anterior" class="navegar">Anterior</button>
-                <button id="proximo" class="navegar">Próximo</button>
+                <button id="anterior" class="navegar" onclick="previousImage()">Anterior</button>
+                <button id="proximo" class="navegar" onclick="nextImage()">Próximo</button>
             </div>
         </article>
 
@@ -165,6 +165,7 @@
     <!-- navegacao: código que faz a "navegação em abas" da página -->
     <script src="src/navegacao.js"></script>
     <script src="src/gravitationCalculator.js"></script>
+    <script src="src/changeImage.js"></script>
 
 </body>
 </html>
